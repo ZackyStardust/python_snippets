@@ -88,3 +88,28 @@ def join(separator, to_append):
         size += 1
     else:
         return result
+
+
+'''
+Then, I had to create a printer that would print the board with numbers on top and on the left as coordinates. For example:
+
+ 123
+1XOX
+2 OO
+3 X
+
+And I came up with the following solution:
+'''
+
+
+def format_board(board):
+    joined_rows = []
+    string = ""
+    for i in range(len(board)):
+        string += str(i + 1)
+    joined_rows.append(" " + string)
+    for i in range(len(board)):
+        string = f'{str(i + 1)}{"".join(board[i])}'
+        joined_rows.append("".join(string))
+    return "\n".join(joined_rows)
+
