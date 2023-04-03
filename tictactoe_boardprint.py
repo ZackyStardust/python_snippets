@@ -53,15 +53,24 @@ def format_board(board):
   
 
 '''
-And now, a solution using join().
+And now, a solution using join(). They did not provide a result of their own for this one. I think I could have done better in the following line:
+
+sep = "\n" + sep + "\n"
+
+But, right not, I don't see how.
+
 '''
 
 
 def format_board(board):
     joined_rows = []
+    sep = []
     for row in board:
         joined_rows.append("|".join(row))
-    return "\n-+-+-\n".join(joined_rows)
+        sep.append("-")
+    sep = "+".join(sep)
+    sep = "\n" + sep + "\n"
+    return sep.join(joined_rows)
 
 
 '''
@@ -79,5 +88,3 @@ def join(separator, to_append):
         size += 1
     else:
         return result
-      
-    
