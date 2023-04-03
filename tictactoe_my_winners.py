@@ -1,3 +1,18 @@
+'''
+The way I made the functions are widely different from the ones futurecoder showed me how it could be easily and most effectively done.
+Therefore, for study purposes, I wanted to save my results and compare to the results that futurecoder gave me.
+'''
+
+def winner(board):
+    if row_winner(board) == True:
+        return True
+    if column_winner(board) == True:
+        return True
+    if diagonal_winner(board) == True:
+        return True
+    return False
+
+
 def row_winner(board):
     len_x = len(board)
     for row in board:
@@ -55,24 +70,38 @@ def diagonal_winner(board):
     return False
 
 
+# The assert_equal is a function from futurecoder to test the functions I make.
 assert_equal(
-    diagonal_winner(
+    winner(
         [
-            ['O', 'X', 'O', 'X'],
-            [' ', 'O', 'X', ' '],
-            ['X', 'X', ' ', 'X'],
-            ['X', ' ', 'O', 'O']
+            ['X', 'X', 'X', ' '],
+            ['X', 'X', ' ', ' '],
+            ['X', ' ', 'O', 'X'],
+            [' ', ' ', 'O', 'X']
+        ]
+    ),
+    False
+)
+
+
+assert_equal(
+    winner(
+        [
+            ['X', ' ', 'X'],
+            ['O', 'X', 'O'],
+            ['O', 'O', 'O']
         ]
     ),
     True
 )
+
+
 assert_equal(
-    diagonal_winner(
+    winner(
         [
-            ['X', 'X', ' '],
-            ['X', ' ', 'O'],
-            [' ', 'O', 'O']
+            ['X', ' '],
+            ['X', 'O']
         ]
     ),
-    False
+    True
 )
