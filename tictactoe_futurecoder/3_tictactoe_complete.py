@@ -1,7 +1,8 @@
 '''
 Futurecoder now gave me a list of functions for me to work. I was supposed to create the game itself.
 The function of the game was supposed to be play_game(board_size, player1, player2).
-They gave me the following functions below, already done:
+They gave me the following functions below, already done.
+Note, however, that the play_move function is commented: I modified it to better suit my purpose.
 '''
 
 def winning_line(strings):
@@ -35,14 +36,14 @@ def format_board(board):
     rows = [f'{i + 1} {"|".join(row)}' for i, row in enumerate(board)]
     return f'  {" ".join(str(i + 1) for i in range(size))}\n{line.join(rows)}'
 
-
+'''
 def play_move(board, player):
     print(f'{player} to play:')
     row = int(input()) - 1
     col = int(input()) - 1
     board[row][col] = player
     print(format_board(board))
-
+'''
 
 def make_board(size):
     return [[' '] * size for _ in range(size)]
