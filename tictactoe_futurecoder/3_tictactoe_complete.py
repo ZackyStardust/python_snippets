@@ -3,6 +3,9 @@ Futurecoder now gave me a list of functions for me to work. I was supposed to cr
 The function of the game was supposed to be play_game(board_size, player1, player2).
 They gave me the following functions below, already done.
 Note, however, that the play_move function is commented: I modified it to better suit my purpose.
+Also of note is that futurecoder said that I should consider that the players would only give correct inputs,
+so I was not supposed to deal with wrong inputs. I, however, plan to change it so that if the players insert
+a wrong input, the program warns that the input was invalid and that they should try again.
 '''
 
 def winning_line(strings):
